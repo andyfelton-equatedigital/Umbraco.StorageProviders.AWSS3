@@ -1,0 +1,44 @@
+parameters:
+  - name: cache_nuget
+    displayName: Cache NuGet packages
+    type: boolean
+    default: true
+
+variables:
+  solution: Umbraco.StorageProviders.AWSS3.sln
+  buildConfiguration: Release
+  NUGET_PACKAGES: $(Pipeline.Workspace)/.nuget/packages
+  DOTNET_NOLOGO: true
+  DOTNET_GENERATE_ASPNET_CERTIFICATE: false
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+
+stages:
+  - stage: Artifacts
+    jobs:
+      - job: Build
+        pool:
+          vmImage: windows-latest
+        steps:
+          - task: Cache@2
+            condition: ${{parameters.cache_nuget}}
+            inputs:
+              key: 'nuget | "$(Agent.OS)" | **/packages.lock.json'
+              restoreKeys: |
+                nuget | "$(Agent.OS)"
+                nuget
+              path: $(NUGET_PACKAGES)
+            displayName: Cache NuGet packages
+
+          - script: dotnet restore $(solution) --locked-mode
+            displayName: Restore NuGet packages
+
+          - script: dotnet build $(solution) -c $(buildConfiguration) -p:ContinuousIntegrationBuild=true --no-restore
+            displayName: Build
+
+          - script: dotnet pack $(solution) -c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory) --no-restore --no-build
+            displayName: Pack
+
+          - task: PublishBuildArtifacts@1
+            inputs:
+                ArtifactName: nupkg
+            displayName: Publish NuGet packages

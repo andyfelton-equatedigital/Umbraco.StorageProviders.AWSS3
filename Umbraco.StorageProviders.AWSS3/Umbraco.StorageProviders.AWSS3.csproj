@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <AnalysisMode>All</AnalysisMode>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Description>AWS S3 Storage provider for Umbraco CMS</Description>
+    <PackageTags>umbraco storage AWS S3</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
