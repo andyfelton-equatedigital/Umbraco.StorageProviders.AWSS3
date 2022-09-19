@@ -7,6 +7,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>AWS S3 Storage provider for Umbraco CMS</Description>
     <PackageTags>umbraco storage AWS S3</PackageTags>
+  <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
   </PropertyGroup>
 
   <ItemGroup>
