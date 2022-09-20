@@ -1,0 +1,23 @@
+<Project>
+    <PropertyGroup>
+        <Version>10.0.0</Version>
+        <NeutralLanguage>en-US</NeutralLanguage>
+        <Company>Equate Digital</Company>
+        <Copyright>Copyright © Equate Digital 2022</Copyright>
+        <Authors>Equate Digital</Authors>
+        <PackageProjectUrl>https://github.com/umbraco/Umbraco.StorageProviders.AWSS3</PackageProjectUrl>
+        <PackageIconUrl>https://umbraco.com/dist/nuget/logo-small.png</PackageIconUrl>
+        <PackageIcon>icon.png</PackageIcon>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageTags>umbraco storage</PackageTags>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
+        <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+        <DefaultItemExcludes>$(DefaultItemExcludes);packages.lock.json</DefaultItemExcludes>
+        <RestoreLockedMode>true</RestoreLockedMode>
+        <NoWarn>NU1603</NoWarn>
+    </PropertyGroup>
+
+</Project>
