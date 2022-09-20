@@ -6,8 +6,6 @@
         <Copyright>Copyright © Equate Digital 2022</Copyright>
         <Authors>Equate Digital</Authors>
         <PackageProjectUrl>https://github.com/umbraco/Umbraco.StorageProviders.AWSS3</PackageProjectUrl>
-        <PackageIconUrl>https://umbraco.com/dist/nuget/logo-small.png</PackageIconUrl>
-        <PackageIcon>icon.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageTags>umbraco storage</PackageTags>
     </PropertyGroup>
