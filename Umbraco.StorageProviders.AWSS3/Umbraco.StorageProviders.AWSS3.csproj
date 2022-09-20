@@ -7,7 +7,10 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>AWS S3 Storage provider for Umbraco CMS</Description>
     <PackageTags>umbraco storage AWS S3</PackageTags>
-  <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <RestoreLockedMode>true</RestoreLockedMode>
+    <NoWarn>NU1603</NoWarn>
+    <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
   </PropertyGroup>
 
   <ItemGroup>
